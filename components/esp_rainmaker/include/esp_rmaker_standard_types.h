@@ -45,9 +45,12 @@ extern "C"
 #define ESP_RMAKER_PARAM_TIMEZONE       "esp.param.tz"
 #define ESP_RMAKER_PARAM_TIMEZONE_POSIX       "esp.param.tz_posix"
 #define ESP_RMAKER_PARAM_SCHEDULES      "esp.param.schedules"
+#define ESP_RMAKER_PARAM_SCENES         "esp.param.scenes"
 #define ESP_RMAKER_PARAM_REBOOT         "esp.param.reboot"
 #define ESP_RMAKER_PARAM_FACTORY_RESET  "esp.param.factory-reset"
 #define ESP_RMAKER_PARAM_WIFI_RESET     "esp.param.wifi-reset"
+#define ESP_RMAKER_PARAM_LOCAL_CONTROL_POP      "esp.param.local_control_pop"
+#define ESP_RMAKER_PARAM_LOCAL_CONTROL_TYPE     "esp.param.local_control_type"
 
 
 /********** STANDARD DEVICE TYPES **********/
@@ -63,7 +66,9 @@ extern "C"
 #define ESP_RMAKER_SERVICE_OTA          "esp.service.ota"
 #define ESP_RMAKER_SERVICE_TIME         "esp.service.time"
 #define ESP_RMAKER_SERVICE_SCHEDULE     "esp.service.schedule"
+#define ESP_RMAKER_SERVICE_SCENES       "esp.service.scenes"
 #define ESP_RMAKER_SERVICE_SYSTEM       "esp.service.system"
+#define ESP_RMAKER_SERVICE_LOCAL_CONTROL    "esp.service.local_control"
 
 #ifdef __cplusplus
 }

@@ -1,5 +1,35 @@
 # Changes
 
+## 25-Jan-2022 (app_wifi: Minor feature additions to provisioning workflow)
+
+Added a 30 minute timeout for Wi-Fi provisioning as a security measure. A device reboot will be
+required to restart provisioning after it times out. The value can changed using the
+`CONFIG_APP_WIFI_PROV_TIMEOUT_PERIOD` config option. A value of 0 will disable the timeout logic.
+`APP_WIFI_EVENT_PROV_TIMEOUT` event will be triggerd to indicate that the provisioning has timed out.
+
+## 25-Jan-2022 (examples: Enable some security features and change order of component dirs)
+
+A couple of security features were added some time back, viz.
+
+1. esp_rmaker_local_ctrl: Added support for sec1
+2. esp_rmaker_user_mapping: Add checks for user id for better security
+
+These are kept disabled by default at component level to maintain backward compatibility and not
+change any existing projects. However, since enabling them is recommended, these are added in
+the sdkconfig.defaults of all examples.
+
+A minor change in CMakeLists.txt has also been done for all examples so that the rmaker_common
+component from esp-rainmaker gets used, rather than the one from esp-insights.
+
+## 12-Jan-2022 (esp_rmaker_local_ctrl: Added support for sec1)
+
+This commit adds support for security1 for local control. This can be enabled by setting
+`CONFIG_ESP_RMAKER_LOCAL_CTRL_SECURITY_1` when using local control feature (this is the
+default security level when enabling local control). This would also require the latest
+phone apps which have the support for security1.
+
+You can check the docs [here](https://rainmaker.espressif.com/docs/local-control.html) for more details.
+
 ## 24-Aug-2021 (esp_rmaker_user_mapping: Add checks for user id for better security)
 
 This commit adds some logic to detect a reset to factory or a user change during the
